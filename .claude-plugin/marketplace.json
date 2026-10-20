@@ -1,0 +1,13 @@
+{
+  "name": "plot",
+  "description": "The official Plot plugin.",
+  "owner": { "name": "Plot" },
+  "plugins": [
+    {
+      "name": "plot",
+      "source": "./",
+      "description": "Read and update Plot tasks, projects, documents, areas, comments, and notifications.",
+      "category": "productivity"
+    }
+  ]
+}

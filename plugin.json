@@ -1,0 +1,88 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "plot",
+  "version": "1.0.0",
+  "description": "Read and update Plot tasks, projects, documents, areas, comments, and notifications from your AI assistant.",
+  "author": {
+    "name": "Plot",
+    "url": "https://plot.app"
+  },
+  "homepage": "https://plot.app/docs/ai",
+  "repository": "https://github.com/plot-hq/agent-plugins",
+  "license": "MIT",
+  "keywords": ["plot", "plot.app", "plot tasks", "plot projects"],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Plot",
+        "shortDescription": "Plan and track work in Plot",
+        "longDescription": "Plot is a workspace for tasks, projects, documents, and team updates. This plugin connects your Plot workspace so you can find work, create and update tasks, build task trees with dependencies, read and write documents, leave comments, and check your inbox from a conversation.\n\nYou sign in to Plot and choose one workspace during setup. Plot applies your normal permissions to every request, so the assistant can only see and change what you can. Plot shows the permissions the assistant requests before you approve them.\n\nLimitations: one connection covers one workspace; reconnect to switch. Connections expire after 30 days. Task start dates, label filters, and project summaries are not available yet.",
+        "developerName": "Plot",
+        "category": "Productivity",
+        "capabilities": ["Read", "Write"],
+        "websiteURL": "https://plot.app",
+        "supportURL": "https://plot.app/docs/ai",
+        "privacyPolicyURL": "https://plot.app/privacy",
+        "termsOfServiceURL": "https://plot.app/terms",
+        "defaultPrompt": [
+          "What tasks are assigned to me in Plot this week?",
+          "Turn these meeting notes into Plot tasks for the launch project.",
+          "Summarize the latest comments on my Plot tasks."
+        ],
+        "brandColor": "#2B2A28",
+        "composerIcon": "./assets/icon.png",
+        "logo": "./assets/logo.png"
+      },
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Confirms the connected workspace and lists tasks assigned to the current user.",
+              "prompt": "What Plot tasks are assigned to me?",
+              "tools_triggered": "whoami, task_list",
+              "expected_behavior": "Names the connected workspace and lists the reviewer's assigned tasks with their handles, such as ENG-12, and statuses."
+            },
+            {
+              "description": "Creates a single task in an existing area.",
+              "prompt": "Create a Plot task in the ENG area called \"Review the onboarding checklist\" and assign it to me.",
+              "tools_triggered": "whoami, area_get, task_create",
+              "expected_behavior": "Creates the task in ENG, assigned to the reviewer, and replies with the new task handle."
+            },
+            {
+              "description": "Creates a parent task with subtasks and a dependency in one atomic request.",
+              "prompt": "In ENG, create a task \"Launch beta\" with subtasks \"Write release notes\" and \"Send invite email\", where the email is blocked by the release notes.",
+              "tools_triggered": "task_create_tree",
+              "expected_behavior": "Creates one parent task with two subtasks and a dependency, and returns all three handles."
+            },
+            {
+              "description": "Searches the workspace and reads a document.",
+              "prompt": "Find the Plot document about the onboarding plan and summarize it.",
+              "tools_triggered": "search, doc_get",
+              "expected_behavior": "Finds the onboarding document, reads its Markdown content, and returns a short summary that cites the document title."
+            },
+            {
+              "description": "Adds a comment to a task after reading it.",
+              "prompt": "Add a comment to ENG-1 saying the review is done and ready to ship.",
+              "tools_triggered": "task_get, comment_add",
+              "expected_behavior": "Reads ENG-1, posts the comment on it, and confirms the comment was saved."
+            }
+          ],
+          "negative": [
+            {
+              "description": "The request is unrelated to Plot, so no Plot tool should run.",
+              "prompt": "What is the capital of Portugal?"
+            },
+            {
+              "description": "Deletion is ambiguous. The assistant should ask which tasks to delete instead of deleting anything.",
+              "prompt": "Clean up my Plot workspace."
+            },
+            {
+              "description": "The connection is bound to one workspace. The assistant should explain that the user must reconnect to choose another workspace rather than claim to switch.",
+              "prompt": "Switch Plot to my other workspace and list its projects."
+            }
+          ]
+        }
+      }
+    }
+  }
+}
