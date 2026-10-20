@@ -9,9 +9,10 @@ conversation.
 This plugin bundles two parts:
 
 - The Plot MCP (Model Context Protocol) server at `https://mcp.plot.app/mcp`.
-- The `managing-plot` skill, which tells the assistant how to use Plot's tools
-  safely: confirm the workspace, read before writing, and report the handles it
-  changed.
+- The `managing-plot` skill, which teaches the assistant how your team works in
+  Plot. It moves tasks through their statuses as it works, records blockers,
+  follows the area's conventions when it plans a project, keeps plans in Plot
+  documents, and links every item it mentions.
 
 ## Install
 
