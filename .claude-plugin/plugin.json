@@ -5,6 +5,7 @@
   "description": "Read and update Plot tasks, projects, documents, areas, comments, and notifications from Claude.",
   "author": { "name": "Plot", "url": "https://plot.app" },
   "homepage": "https://plot.app/docs/ai",
+  "privacyPolicyUrl": "https://plot.app/privacy",
   "repository": "https://github.com/plot-hq/agent-plugins",
   "license": "MIT",
   "keywords": ["plot", "plot.app", "plot tasks", "plot projects"]

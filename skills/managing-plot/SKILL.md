@@ -1,6 +1,6 @@
 ---
 name: managing-plot
-description:
+description: >
   Read and update the user's Plot workspace (tasks, projects, documents, areas,
   comments, and notifications) through the Plot MCP tools. Use when the user
   mentions a task ID like ENG-042, pastes a plot.app or go.plot.app link, asks
