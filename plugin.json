@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "plot",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Read and update Plot tasks, projects, documents, areas, comments, and notifications from your AI assistant.",
   "author": {
     "name": "Plot",
@@ -10,16 +10,24 @@
   "homepage": "https://plot.app/docs/ai",
   "repository": "https://github.com/plot-hq/agent-plugins",
   "license": "MIT",
-  "keywords": ["plot", "plot.app", "plot tasks", "plot projects"],
+  "keywords": [
+    "plot",
+    "plot.app",
+    "plot tasks",
+    "plot projects"
+  ],
   "extensions": {
     "com.openai": {
       "interface": {
         "displayName": "Plot",
-        "shortDescription": "Plan and track work in Plot",
-        "longDescription": "Plot is a workspace for tasks, projects, documents, and team updates. This plugin connects your Plot workspace so you can find work, create and update tasks, build task trees with dependencies, read and write documents, leave comments, and check your inbox from a conversation.\n\nYou sign in to Plot and choose one workspace during setup. Plot applies your normal permissions to every request, so the assistant can only see and change what you can. Plot shows the permissions the assistant requests before you approve them.\n\nLimitations: one connection covers one workspace; reconnect to switch. Connections expire after 30 days. Task start dates, label filters, and project summaries are not available yet.",
+        "shortDescription": "The AI workspace for marketing agencies",
+        "longDescription": "Plot is the calm workspace for creative and marketing agencies. Connect it, and ChatGPT works from the same client work your team does: the briefs, tasks, documents and history. You no longer paste context into a fresh chat.\n\nWith Plot connected, ChatGPT can:\n\n- Find any client, project, task or document in your workspace\n- Read a client’s briefs, notes and recent activity before it writes\n- Turn a plan into tasks, with subtasks and the order they need to happen in\n- Write and update documents, and leave comments where your team will see them\n- Go through your inbox and archive what’s done\n\nWhen you connect, you choose whether ChatGPT can only read or can also make changes. ChatGPT acts as you, with your Plot account and permissions.",
         "developerName": "Plot",
         "category": "Productivity",
-        "capabilities": ["Read", "Write"],
+        "capabilities": [
+          "Read",
+          "Write"
+        ],
         "websiteURL": "https://plot.app",
         "supportURL": "https://plot.app/docs/ai",
         "privacyPolicyURL": "https://plot.app/privacy",

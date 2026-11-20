@@ -1,7 +1,7 @@
 {
   "name": "plot",
   "displayName": "Plot",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Read and update Plot tasks, projects, documents, areas, comments, and notifications from Claude.",
   "author": { "name": "Plot", "url": "https://plot.app" },
   "homepage": "https://plot.app/docs/ai",
