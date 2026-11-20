@@ -2,7 +2,7 @@
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "plot",
   "version": "1.0.1",
-  "description": "Read and update Plot tasks, projects, documents, areas, comments, and notifications from your AI assistant.",
+  "description": "The AI workspace for marketing agencies. Find client work, turn plans into tasks, and update documents in Plot from your AI assistant.",
   "author": {
     "name": "Plot",
     "url": "https://plot.app"
