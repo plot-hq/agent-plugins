@@ -20,7 +20,7 @@
     "com.openai": {
       "interface": {
         "displayName": "Plot",
-        "shortDescription": "The AI workspace for agencies",
+        "shortDescription": "AI workspace for marketing",
         "longDescription": "Plot is the calm workspace for creative and marketing agencies. Connect it, and ChatGPT works from the same client work your team does: the briefs, tasks, documents and history. You no longer paste context into a fresh chat.\n\nWith Plot connected, ChatGPT can:\n\n- Find any client, project, task or document in your workspace\n- Read a client’s briefs, notes and recent activity before it writes\n- Turn a plan into tasks, with subtasks and the order they need to happen in\n- Write and update documents, and leave comments where your team will see them\n- Go through your inbox and archive what’s done\n\nWhen you connect, you choose whether ChatGPT can only read or can also make changes. ChatGPT acts as you, with your Plot account and permissions.",
         "developerName": "Plot",
         "category": "Productivity",
