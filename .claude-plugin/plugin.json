@@ -1,7 +1,7 @@
 {
   "name": "plot",
   "displayName": "Plot",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "The AI workspace for marketing agencies. Find client work, turn plans into tasks, and update documents in Plot from Claude.",
   "author": { "name": "Plot", "url": "https://plot.app" },
   "homepage": "https://plot.app/docs/ai",
